@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block body %}
+
+<h2>{{ title }}</h2>
+
+<table>
+    <form action="/view_table" method="post">
+    <select name="table">
+        <option disabled>Выберите имя таблицы для вывода</option>
+        {% for table in tables %}
+            <option value={{table}}>{{table}}</option>
+        {% endfor %}
+    </select>
+    <p><input type="submit" value="Отправить"></p>
+    </form>
+</table>
+
+{% endblock %}
